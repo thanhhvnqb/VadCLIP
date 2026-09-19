@@ -17,12 +17,17 @@ class UCFDataset(data.Dataset):
         elif test_mode == False:
             self.df = self.df.loc[self.df['label'] != 'Normal']
             self.df = self.df.reset_index()
-        
+
+    def _video_name(self, path: str):
+        basename = path.rsplit('/', 1)[-1]
+        return basename.split('__')[0]
+
     def __len__(self):
         return self.df.shape[0]
 
     def __getitem__(self, index):
-        clip_feature = np.load(self.df.loc[index]['path'])
+        path = self.df.loc[index]['path']
+        clip_feature = np.load(path)
         if self.test_mode == False:
             clip_feature, clip_length = tools.process_feat(clip_feature, self.clip_dim)
         else:
@@ -30,6 +35,9 @@ class UCFDataset(data.Dataset):
 
         clip_feature = torch.tensor(clip_feature)
         clip_label = self.df.loc[index]['label']
+        video_name = self._video_name(path)
+        if self.test_mode:
+            return clip_feature, clip_label, clip_length, video_name, clip_label
         return clip_feature, clip_label, clip_length
 
 class XDDataset(data.Dataset):
@@ -38,12 +46,17 @@ class XDDataset(data.Dataset):
         self.clip_dim = clip_dim
         self.test_mode = test_mode
         self.label_map = label_map
-        
+
+    def _video_name(self, path: str):
+        basename = path.rsplit('/', 1)[-1]
+        return basename.rsplit('__', 1)[0]
+
     def __len__(self):
         return self.df.shape[0]
 
     def __getitem__(self, index):
-        clip_feature = np.load(self.df.loc[index]['path'])
+        path = self.df.loc[index]['path']
+        clip_feature = np.load(path)
         if self.test_mode == False:
             clip_feature, clip_length = tools.process_feat(clip_feature, self.clip_dim)
         else:
@@ -51,4 +64,7 @@ class XDDataset(data.Dataset):
 
         clip_feature = torch.tensor(clip_feature)
         clip_label = self.df.loc[index]['label']
+        video_name = self._video_name(path)
+        if self.test_mode:
+            return clip_feature, clip_label, clip_length, video_name, clip_label
         return clip_feature, clip_label, clip_length
