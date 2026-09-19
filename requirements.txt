@@ -1,0 +1,7 @@
+packaging
+tqdm
+regex
+ftfy
+scipy
+scikit-learn
+pandas

@@ -51,7 +51,7 @@ def train(model, normal_loader, anomaly_loader, testloader, args, label_map, dev
     epoch = 0
 
     if args.use_checkpoint == True:
-        checkpoint = torch.load(args.checkpoint_path)
+        checkpoint = torch.load(args.checkpoint_path, weights_only=False)
         model.load_state_dict(checkpoint['model_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         epoch = checkpoint['epoch']
@@ -75,9 +75,9 @@ def train(model, normal_loader, anomaly_loader, testloader, args, label_map, dev
             feat_lengths = torch.cat([normal_lengths, anomaly_lengths], dim=0).to(device)
             text_labels = get_batch_label(text_labels, prompt_text, label_map).to(device)
 
-            text_features, logits1, logits2 = model(visual_features, None, prompt_text, feat_lengths) 
+            text_features, logits1, logits2 = model(visual_features, None, prompt_text, feat_lengths)
             #loss1
-            loss1 = CLAS2(logits1, text_labels, feat_lengths, device) 
+            loss1 = CLAS2(logits1, text_labels, feat_lengths, device)
             loss_total1 += loss1.item()
             #loss2
             loss2 = CLASM(logits2, text_labels, feat_lengths, device)
@@ -102,21 +102,21 @@ def train(model, normal_loader, anomaly_loader, testloader, args, label_map, dev
                 AP = AUC
 
                 if AP > ap_best:
-                    ap_best = AP 
+                    ap_best = AP
                     checkpoint = {
                         'epoch': e,
                         'model_state_dict': model.state_dict(),
                         'optimizer_state_dict': optimizer.state_dict(),
                         'ap': ap_best}
                     torch.save(checkpoint, args.checkpoint_path)
-                
+
         scheduler.step()
-        
+
         torch.save(model.state_dict(), 'model/model_cur.pth')
-        checkpoint = torch.load(args.checkpoint_path)
+        checkpoint = torch.load(args.checkpoint_path, weights_only=False)
         model.load_state_dict(checkpoint['model_state_dict'])
 
-    checkpoint = torch.load(args.checkpoint_path)
+    checkpoint = torch.load(args.checkpoint_path, weights_only=False)
     torch.save(checkpoint['model_state_dict'], args.model_path)
 
 def setup_seed(seed):
