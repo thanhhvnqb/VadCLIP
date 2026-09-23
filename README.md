@@ -1,4 +1,14 @@
 # VadCLIP
+
+An independent **LAS-VAD (arXiv:2603.00550)** implementation is available alongside the original code. See [setup, training, evaluation, and reproduction assumptions](docs/LAS_VAD.md). Entry point: `python src/las_vad.py {train,evaluate} --help`.
+
+The [paper/code audit](docs/LAS_VAD_PAPER_AUDIT.md) documents the signed-cosine ACC correction, equation tests, and remaining reproduction gaps. New training uses the correction; resuming an older checkpoint preserves its original ACC configuration.
+
+New LAS-VAD runs use the official attribute descriptions from CVPR supplementary
+Table 10 (`configs/las_attributes_paper.json`). The previous hand-written
+descriptions remain available for comparison. See the [training diagnosis and
+controlled experiments](docs/LAS_VAD_TRAINING_DIAGNOSIS.md).
+
 This is the official Pytorch implementation of our paper:
 **"VadCLIP: Adapting Vision-Language Models for Weakly Supervised Video Anomaly Detection"** in **AAAI 2024.**  
 > <a href="https://scholar.google.com.hk/citations?user=QkNqUH4AAAAJ" target="_blank">Peng Wu</a>, <a href="https://scholar.google.com/citations?user=ljzQLv4AAAAJ" target="_blank">Xuerong Zhou</a>, <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=1ZO7pHkAAAAJ" target="_blank">Guansong Pang</a>, <a href="https://paperswithcode.com/search?q=author%3ALingru+Zhou" target="_blank">Lingru Zhou</a>,  <a href="https://scholar.google.com/citations?user=BSGy3foAAAAJ" target="_blank">Qingsen Yan</a>, <a href="https://scholar.google.com.au/citations?user=aPLp7pAAAAAJ" target="_blank">Peng Wang</a>, <a href="https://teacher.nwpu.edu.cn/m/en/1999000059.html" target="_blank">Yanning Zhang</a>

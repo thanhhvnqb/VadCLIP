@@ -1,0 +1,18 @@
+{
+  "normal": "People walking or standing calmly, orderly surroundings, routine activities, peaceful scene.",
+  "abuse": "A person repeatedly striking or mistreating another person, defensive postures and visible distress.",
+  "arrest": "Officers restraining a person, holding their arms, applying handcuffs, surrounding a suspect.",
+  "arson": "A person deliberately igniting material, spreading fire, flames and smoke near a structure.",
+  "assault": "A person attacking another person, sudden strikes, aggressive gestures and defensive movements.",
+  "burglary": "Forced entry into a building, damaged doors or windows, intruders searching rooms and removing property.",
+  "explosion": "A sudden bright flash, flames, thick smoke, flying debris and damaged structures.",
+  "fighting": "People exchanging punches or kicks, grappling, rapid aggressive movements and defensive postures.",
+  "road accident": "Vehicles colliding, abrupt stopping, damaged vehicles, scattered debris and disrupted traffic.",
+  "car accident": "Vehicles colliding, abrupt stopping, damaged vehicles, scattered debris and disrupted traffic.",
+  "robbery": "Threatening a person while taking belongings, forceful grabbing, weapons and a fleeing attacker.",
+  "shooting": "A person aiming or firing a gun, muzzle flashes, recoil and people seeking cover.",
+  "shoplifting": "A person concealing merchandise in clothing or a bag and leaving a shop without paying.",
+  "stealing": "A person covertly taking another person's property, quickly grasping an item and moving away.",
+  "vandalism": "A person deliberately damaging property, smashing objects, breaking windows or marking surfaces.",
+  "riot": "A disorderly crowd, group clashes, objects being thrown, damaged property and chaotic movement."
+}

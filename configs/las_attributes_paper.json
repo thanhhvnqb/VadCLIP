@@ -1,0 +1,32 @@
+{
+  "xd": {
+    "normal": "regular surroundings, no chaotic elements, peaceful scene",
+    "fighting": "people scuffling, physical clashes, aggressive gestures, pushing/hitting actions, angry facial expressions",
+    "shooting": "visible gun, muzzle flash, people fleeing in panic, possible bullet traces, tense postures",
+    "riot": "chaotic crowd, broken property/windows, aggressive mob actions, scattered debris, yelling people",
+    "abuse": "aggressive physical contact (grabbing/hitting), victim’s distressed face, tense body language, intimidating gestures",
+    "car accident": "crushed vehicle bodies, scattered debris, bent metal, possible injured people nearby, damaged parts",
+    "explosion": "flames, thick smoke, flying debris, damaged structures, bright flash at blast site"
+  },
+  "ucf": {
+    "normal": "regular surroundings, no chaotic elements, peaceful scene",
+    "abuse": "aggressive physical contact (grabbing/hitting), victim’s distressed face, tense body language, intimidating gestures",
+    "arrest": "legal detention of suspects by law enforcement authorities for violating criminal or civil laws",
+    "arson": "intentional act of setting fire to buildings, property, or vegetation, causing destruction or danger",
+    "assault": "unlawful physical attack or threat of attack on an individual, resulting in potential harm",
+    "burglary": "illegal entry into a premises (residence/business) to steal property or commit other crimes",
+    "explosion": "flames, thick smoke, flying debris, damaged structures, bright flash at blast site",
+    "fighting": "people scuffling, physical clashes, aggressive gestures, pushing/hitting actions, angry facial expressions.",
+    "road accident": "unexpected incidents involving vehicles on roads, leading to injuries, deaths, or property damage",
+    "robbery": "forcible seizure of others’ property through violence, threats, or intimidation in public or private spaces",
+    "shooting": "visible gun, muzzle flash, people fleeing in panic, possible bullet traces, tense postures",
+    "shoplifting": "secret theft of merchandise from retail stores without payment, often done discreetly",
+    "stealing": "illegal taking of another person’s belongings without permission or consent, violating property rights",
+    "vandalism": "malicious and intentional damage or defacement of public or private property, including graffiti or destruction"
+  },
+  "_source": {
+    "title": "LAS-VAD CVPR 2026 supplementary material, Table 10",
+    "sha256": "11e86d385123826c7b74bca3a15047f8e2b2d0ea965cedc9bb6011346c86b67d",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Wang_Weakly_Supervised_Video_CVPR_2026_supplemental.pdf"
+  }
+}
